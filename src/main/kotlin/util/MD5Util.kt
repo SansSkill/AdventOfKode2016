@@ -4,7 +4,7 @@ import java.math.BigInteger
 import java.security.MessageDigest
 
 @Suppress("unused")
-object MD5 {
+object MD5Util {
     private val md5MessageDigest = MessageDigest.getInstance("MD5")
 
     fun toMD5(input:String): String {

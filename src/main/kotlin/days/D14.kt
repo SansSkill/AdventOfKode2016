@@ -1,7 +1,7 @@
 package days
 
 import java.util.LinkedList
-import util.MD5
+import util.MD5Util
 
 @Suppress("unused")
 object D14 : Day {
@@ -15,8 +15,8 @@ object D14 : Day {
         var nextPrefix = 0
         val hashes = LinkedList<String>()
         fun addHash() {
-            var newHash = MD5.toMD5("$salt${nextPrefix++}")
-            repeat(extraHashes) { newHash = MD5.toMD5(newHash) }
+            var newHash = MD5Util.toMD5("$salt${nextPrefix++}")
+            repeat(extraHashes) { newHash = MD5Util.toMD5(newHash) }
             hashes.add(newHash)
         }
         repeat(1001) { addHash() }
