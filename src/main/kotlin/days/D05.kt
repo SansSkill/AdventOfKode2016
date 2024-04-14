@@ -8,7 +8,7 @@ object D05 : Day {
     private val md5 = MessageDigest.getInstance("MD5")
     private val prefix = readFile()[0]
 
-    override suspend fun part1(): String =
+    override fun part1(): String =
         buildString {
             var n = 0
             while (length < 8) {
@@ -17,7 +17,7 @@ object D05 : Day {
             }
         }
 
-    override suspend fun part2(): String {
+    override fun part2(): String {
         val charArray = CharArray(8).apply { fill('.') }
         var n = 0
         while (charArray.any { c -> c == '.' }) {

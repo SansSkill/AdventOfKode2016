@@ -4,7 +4,7 @@ package days
 object D07 : Day {
     private val input = readFile().map { s -> s.split("[", "]") }
 
-    override suspend fun part1(): String {
+    override fun part1(): String {
         fun isABBA(s: String): Boolean =
             (0..s.length - 4).any { i -> s[i] != s[i + 1] && s[i + 1] == s[i + 2] && s[i] == s[i + 3] }
         return input.count { splits ->
@@ -14,7 +14,7 @@ object D07 : Day {
         }.toString()
     }
 
-    override suspend fun part2(): String {
+    override fun part2(): String {
         fun getABAs(s: String): Set<Pair<Char, Char>> =
             buildSet {
                 (0 .. s.length - 3)

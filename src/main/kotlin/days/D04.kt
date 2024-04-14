@@ -32,9 +32,9 @@ object D04: Day {
         }
     }
 
-    override suspend fun part1(): String = rooms.sumOf(Pair<String, Int>::second).toString()
+    override fun part1(): String = rooms.sumOf(Pair<String, Int>::second).toString()
 
-    override suspend fun part2(): String = rooms.single { (name, _) ->
+    override fun part2(): String = rooms.single { (name, _) ->
         "north" in name && "pole" in name && ("object" in name || "storage" in name)
     }.second.toString()
 }

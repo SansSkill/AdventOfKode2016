@@ -6,7 +6,7 @@ import kotlin.math.abs
 object D01 : Day {
     private val instructions = readFile()[0].split(", ")
 
-    override suspend fun part1(): String {
+    override fun part1(): String {
         var x = 0
         var y = 0
         var dir = Dir.North
@@ -19,7 +19,7 @@ object D01 : Day {
         return abs(x).plus(abs(y)).toString()
     }
 
-    override suspend fun part2(): String {
+    override fun part2(): String {
         var x = 0
         var y = 0
         var dir = Dir.North

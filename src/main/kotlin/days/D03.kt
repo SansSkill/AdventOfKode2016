@@ -12,9 +12,9 @@ object D03 : Day {
         }
     }
 
-    override suspend fun part1(): String = input.count(::isTriangle).toString()
+    override fun part1(): String = input.count(::isTriangle).toString()
 
-    override suspend fun part2(): String = (input.indices step 3).sumOf { y ->
+    override fun part2(): String = (input.indices step 3).sumOf { y ->
         (0..2).count { x -> isTriangle(input[y][x], input[y + 1][x], input[y + 2][x]) }
     }.toString()
 

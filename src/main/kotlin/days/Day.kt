@@ -1,8 +1,15 @@
 package days
 
 interface Day {
-    suspend fun part1(): String
-    suspend fun part2(): String
-}
+    @Suppress("SameReturnValue")
+    fun part1(): String
+    @Suppress("SameReturnValue")
+    fun part2(): String
 
-fun Day.readFile(): List<String> = this::class.java.getResource("${this::class.simpleName}.txt")!!.readText().split("\r\n")
+    @Suppress("unused")
+    fun readFile(): List<String> {
+        val fileName = "${this::class.simpleName}.txt"
+        val resource = this::class.java.getResource(fileName) ?: error("Failed to read file $fileName")
+        return resource.readText().split("\r\n")
+    }
+}

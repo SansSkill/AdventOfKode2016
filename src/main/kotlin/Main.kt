@@ -1,5 +1,4 @@
 import days.Day
-import kotlinx.coroutines.runBlocking
 import kotlin.time.measureTime
 
 fun main() {
@@ -11,10 +10,12 @@ fun main() {
             null
         }
 
-    fun print(day: Day) = runBlocking {
+    fun print(day: Day) = try {
         val part1Time = measureTime { day.part1().let(::println) }.inWholeMilliseconds
         val part2Time = measureTime { day.part2().let(::println) }.inWholeMilliseconds
         println("Part 1 took $part1Time ms and part 2 took $part2Time ms")
+    } catch (e: IllegalStateException) {
+        println("IllegalStateException occurred during running: ${e.message}")
     }
 
     while (true) {

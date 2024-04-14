@@ -20,7 +20,7 @@ object D09 : Day {
         return count
     }
 
-    override suspend fun part1(): String = getDecompressedLength(input, false).toString()
+    override fun part1(): String = getDecompressedLength(input, false).toString()
 
-    override suspend fun part2(): String = getDecompressedLength(input, true).toString()
+    override fun part2(): String = getDecompressedLength(input, true).toString()
 }

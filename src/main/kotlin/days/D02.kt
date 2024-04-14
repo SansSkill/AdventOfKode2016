@@ -24,7 +24,7 @@ object D02 : Day {
             }
         }
 
-    override suspend fun part1(): String {
+    override fun part1(): String {
         val keypad = listOf(
             listOf('1', '2', '3'),
             listOf('4', '5', '6'),
@@ -33,7 +33,7 @@ object D02 : Day {
         return getCode(keypad)
     }
 
-    override suspend fun part2(): String {
+    override fun part2(): String {
         val keypad = listOf(
             listOf('.', '.', '1', '.', '.'),
             listOf('.', '2', '3', '4', '.'),
